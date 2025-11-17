@@ -39,7 +39,6 @@ function AddTodo({ onAddTodo }) {
 
   const isFormValid = todoInput.trim() !== "" && dateInput !== "";
 
-  // Set minimum date to today
   const today = new Date().toISOString().split('T')[0];
 
   return (
