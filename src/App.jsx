@@ -5,7 +5,6 @@ import TodoItems from "./components/TodoItems";
 import "./App.css";
 
 function App() {
-  // Load todos from localStorage on initial render
   const getInitialTodos = () => {
     const savedTodos = localStorage.getItem('todos');
     if (savedTodos) {
@@ -29,7 +28,6 @@ function App() {
 
   const [todos, setTodos] = useState(getInitialTodos);
 
-  // Save todos to localStorage whenever todos change
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
@@ -38,7 +36,7 @@ function App() {
     if (!nameTodo.trim() || !dueDate) return;
     
     const newTodo = {
-      id: Date.now(), // Unique ID based on timestamp
+      id: Date.now(),
       todoName: nameTodo.trim(),
       todoDate: dueDate,
       completed: false,
@@ -129,7 +127,7 @@ function App() {
                 />
               </div>
 
-              {/* Footer Actions */}
+              {/* Footer*/}
               {todos.length > 0 && (
                 <div className="mt-4 border-top pt-3">
                   <div className="d-flex justify-content-between align-items-center">
